@@ -1,8 +1,8 @@
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 import io
 import os
 import sys
-from flask import Flask, request, send_file, jsonify
-from flask_cors import CORS
 from PIL import Image
 import numpy as np
 import time
@@ -10,23 +10,26 @@ import logging
 
 import u2net
 
-logging.basicConfig(level=logging.INFO)
+import subprocess
+from subprocess import PIPE
 
-# Initialize the Flask application
-app = Flask(__name__)
-CORS(app)
+app = FastAPI()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
+@app.get("/")
+def read_root():
+    return {"Rest API for Novatec Avatar Generator"}
 
-# Simple probe.
-@app.route('/', methods=['GET'])
-def hello():
-    return 'Hello U^2-Net!'
-
-
-# Route http posts to this method
-@app.route('/', methods=['POST'])
-def run():
+@app.post("/upload")
+def read_status():
     start = time.time()
+
     # Convert string of image data to uint8
     if 'data' not in request.files:
         return jsonify({'error': 'missing file param `data`'}), 400
@@ -55,8 +58,3 @@ def run():
     # Return data
     return send_file(buff, mimetype='image/png')
 
-
-if __name__ == '__main__':
-    os.environ['FLASK_ENV'] = 'development'
-    port = int(os.environ.get('PORT', 8080))
-    app.run(debug=True, host='0.0.0.0', port=port)
