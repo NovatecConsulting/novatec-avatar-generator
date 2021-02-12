@@ -1,2 +1,3 @@
 <input type="file" accept="image/*" title="Upload your avatar" (change)="onFileChanged($event)">
 <button class="px-4 py-2 bg-blue-400 hover:bg-blue-500 text-white rounded" (click)="upload()">Do the magic</button>
+<img [src]="image">

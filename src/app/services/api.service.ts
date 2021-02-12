@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core'
-import { HttpClient } from '@angular/common/http'
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs'
+import { map } from 'rxjs/operators'
+import { DomSanitizer } from '@angular/platform-browser'
 
 @Injectable({
   providedIn: 'root'
@@ -10,13 +12,17 @@ export class ApiService {
 
   constructor(private http: HttpClient) {}
 
-  upload(image): Observable<any> {
+  upload(image): Observable<Blob> {
     const uploadData = new FormData()
     uploadData.append('data', image)
-    return this.http.post(this.url, uploadData, {
-      reportProgress: true,
-      observe: 'events'
-    })
+    let httpHeaders = new HttpHeaders().set('Accept', "image/*");
+
+    return this.http.post<Blob>(this.url, uploadData, {
+        headers: httpHeaders,
+        reportProgress: true,
+        responseType: 'blob' as 'json'
+      })
+
   }
 
   getInfo() {
