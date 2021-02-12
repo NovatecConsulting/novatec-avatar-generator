@@ -45,8 +45,11 @@ def run():
     res = u2net.run(np.array(img))
     res = res.resize((img.size), resample=Image.BILINEAR) # remove resample
 
-    empty_img = Image.new("RGBA", (img.size), 0)
-    new_img = Image.composite(img, empty_img, res.convert("L"))
+    # empty_img = Image.new("RGBA", (img.size), 0)
+    bg = Image.open('bg.jpg')
+    bg = bg.resize((img.size), resample=Image.BILINEAR)
+    # new_img = Image.composite(img, empty_img, res.convert("L"))
+    new_img = Image.composite(img, bg, res.convert("L"))
 
     # Save to buffer
     buffer = io.BytesIO()
