@@ -11,7 +11,6 @@
   <input #input class="hidden" type="file" accept="image/*" title="Upload your avatar" (change)="onFileChanged($event)">
   <div class="result h-full w-full" *ngIf="image">
     <img class="mx-auto object-cover" [src]="image">
-    <div class="mt-8 text-center text-blue-700 cursor-pointer" (click)="input.click()">Try another image</div>
   </div>
 
 </div>
