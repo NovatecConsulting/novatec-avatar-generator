@@ -3,9 +3,8 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-html, body { height: 100%; }
 
-body {
+html {
   font-family: 'Nunito', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

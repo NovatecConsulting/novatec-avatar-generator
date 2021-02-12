@@ -19,8 +19,13 @@ export class ImageUploadComponent implements OnInit {
     this.apiService.getInfo().subscribe(console.log)
   }
 
-  onFileChanged(event) {
-    this.file = event.target.files[0]
+  onFileChanged(event: Event) {
+    const input = event.target as HTMLInputElement;
+
+    if (!input.files?.length) return
+
+    this.file = input.files[0]
+    this.upload()
   }
 
   upload() {
