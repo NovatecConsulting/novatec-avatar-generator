@@ -16,6 +16,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { ImageUploadComponent } from './components/image-upload/image-upload.component';
 import {MatRippleModule} from '@angular/material/core';
+import { DragAndDropDirective } from './drag-and-drop.directive';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -28,7 +29,8 @@ const appRoutes: Routes = [
     AppComponent,
     HomeComponent,
     AboutComponent,
-    ImageUploadComponent
+    ImageUploadComponent,
+    DragAndDropDirective
   ],
   imports: [
     BrowserModule,

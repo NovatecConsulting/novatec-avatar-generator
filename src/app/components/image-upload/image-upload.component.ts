@@ -28,7 +28,11 @@ export class ImageUploadComponent implements OnInit {
     this.upload()
   }
 
-  upload() {
+  upload(fileList?: FileList) {
+    console.log(fileList)
+    if (typeof fileList != 'undefined') {
+      this.file = fileList[0]
+    }
     this.apiService.upload(this.file).subscribe(res => {
       this.createImageFromBlob(res)
     })

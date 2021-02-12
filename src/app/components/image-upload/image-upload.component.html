@@ -3,8 +3,8 @@
   <h1>Create your own Novatec avatar</h1>
 </div>
 <div class="upload row-span-2 w-full h-full">
-  <div class="h-80 w-80 mx-auto bg-white hover:bg-gray-50 rounded-xl flex flex-col items-center justify-center cursor-pointer shadow-lg"
-       (click)="input.click()" *ngIf="!image">
+  <div appDragAndDrop (onFileDropped)= "upload($event)" class="h-80 w-80 mx-auto bg-white hover:bg-gray-50 rounded-xl flex flex-col items-center justify-center cursor-pointer shadow-lg"
+       (click)="input.click()">
     <svg class="w-16 h-16 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path></svg>
     <span class="mt-8 text-base text-gray-600">Upload image or drag and drop</span>
   </div>
