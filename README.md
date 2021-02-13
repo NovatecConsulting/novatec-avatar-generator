@@ -6,8 +6,7 @@ Angular (11.2) Frontend version for Novatec Avatar Generator offers simple file 
 
 ## Installation
 
-`npm install`
-`npm start` will serve at localhost:4200
+`npm install && npm start` will serve at localhost:4200
 
 
 # Novatec Avatar Generator Backend
