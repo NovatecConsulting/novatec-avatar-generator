@@ -1,4 +1,4 @@
-This application is developed on 12.02.2021 as a submission for Hackathon Event. Contributors: Peter Kutschera, Minh Chi Nguyen.
+This application was developed on 12.02.2021 as a submission for Hackathon Event. Contributors: Peter Kutschera, Minh Chi Nguyen.
 
 # Novatec Avatar Generator Frontend
 
