@@ -2,7 +2,7 @@ This application was developed on 12.02.2021 as a submission for Hackathon Event
 
 # git submodules
 
-This repository uses [git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules). Please clone this repo with the `--recursive` flag to clone all submodules aswell. An alternative after cloning this repo is `git submodule update`.
+This repository uses [git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules). Please clone this repo with the `--recursive` flag to clone all submodules aswell. An alternative after cloning this repo is `git submodule init && git submodule update`.
 
 # Novatec Avatar Generator Frontend
 
