@@ -22,5 +22,5 @@ The backend is based of U^2 Net, with a Flask server and Image Transformation bu
 - Download the pretrained model [u2net.pth](https://drive.google.com/file/d/1ao1ovG1Qtx4b7EoskHXmi2E9rp5CHLcZ/view)
 - Put the file inside the `backend/U-2-Net/saved_models/u2net/` folder, create u2net folder if needed
 - Go back to backend folder, install dependencies with pip/pip3  (pip3 for linux/mac)
-- Install numpy first by `pip install numpy` and then `pip install -r requirements.txt`. If `pip install -r requirements.txt` results in error, please try installing each package manually in the requirements.txt, this is a known bug when installing numpy.
+- Install `pip install -r requirements.txt`. 
 - Start the server with `python main.py`
